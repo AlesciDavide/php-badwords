@@ -182,7 +182,7 @@ e color cui tu fai cotanto mesti.
 Allor si mosse, e io li tenni dietro. ";
 
 $keyWord = $_GET["keyWord"];
-$text = str_replace("$keyWord", "***", $text);
+$text = str_ireplace("$keyWord", "***", $text);
 
 
 ?>
@@ -200,23 +200,28 @@ $text = str_replace("$keyWord", "***", $text);
     <section>
         <div>
         <form action="./index.php" method="GET">
+            <div>
+
+                <label for="keyWord">Inserisci una parolache vuoi venga censurata:</label>
+            </div>
             <input type="text" name="keyWord" id="keyWord">
             <button type="submit">
                 invia
             </button>
         </form>
+        <h1>
+            ci sono <span class="number"><?php echo strlen($text)?></span> lettere.
+        </h1>
         </div>
         <div class="paragrafo">
             <h1>Inferno di dante, Canto I</h1>
-            <p >
-                <?php echo $text ?>
+            <p>
+                <?php echo $text ?> 
             </p>
     
         </div>
         <div>
-            <h1>
-                <?php echo strlen($text)?>
-            </h1>
+            
         </div>
     </section>
 </body>
