@@ -179,10 +179,11 @@ che tu mi meni là dov’or dicesti,
 sì ch’io veggia la porta di san Pietro
 e color cui tu fai cotanto mesti.
 
-Allor si mosse, e io li tenni dietro.
-"
-$keyWorld = $_GET["keyWorld"];
-$text = str_replace("$keyWorld", "***", $text);
+Allor si mosse, e io li tenni dietro. ";
+
+$keyWord = $_GET["keyWord"];
+$text = str_replace("$keyWord", "***", $text);
+
 
 ?>
 
@@ -196,15 +197,27 @@ $text = str_replace("$keyWorld", "***", $text);
     <title>Document</title>
 </head>
 <body>
-    <div>
-
-    </div>
-    <div class="paragrafo">
-        <h1>Inferno di dante, Canto I</h1>
-        <p >
-            <?php echo $text ?>
-        </p>
-
-    </div>
+    <section>
+        <div>
+        <form action="./index.php" method="GET">
+            <input type="text" name="keyWord" id="keyWord">
+            <button type="submit">
+                invia
+            </button>
+        </form>
+        </div>
+        <div class="paragrafo">
+            <h1>Inferno di dante, Canto I</h1>
+            <p >
+                <?php echo $text ?>
+            </p>
+    
+        </div>
+        <div>
+            <h1>
+                <?php echo strlen($text)?>
+            </h1>
+        </div>
+    </section>
 </body>
 </html>
