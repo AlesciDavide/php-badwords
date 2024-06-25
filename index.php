@@ -181,7 +181,8 @@ e color cui tu fai cotanto mesti.
 
 Allor si mosse, e io li tenni dietro. ";
 
-$keyWord = $_GET["keyWord"];
+
+$keyWord = $_GET["keyWord"] ?? '';
 $text = str_ireplace("$keyWord", "***", $text);
 
 
@@ -204,7 +205,7 @@ $text = str_ireplace("$keyWord", "***", $text);
 
                 <label for="keyWord">Inserisci una parolache vuoi venga censurata:</label>
             </div>
-            <input type="text" name="keyWord" id="keyWord">
+            <input type="text" name="keyWord" id="keyWord" >
             <button type="submit">
                 invia
             </button>
